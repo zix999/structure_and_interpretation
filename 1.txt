@@ -1,0 +1,6 @@
+(defun sds (tree)
+  (cond ((null? tree) 0)
+        ((not (pair? tree))
+         (if (odd? tree) (expt tree 2) 0))
+        (t (+ (sds (car tree))
+              (sds (cdr tree))))))
